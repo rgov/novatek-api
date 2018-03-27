@@ -127,6 +127,11 @@ class Novatek:
   def reset_config(self):
     x = self._get_xml(3011)
   
+  def cmd_3012(self):
+    # Version number? 'HT10 20160310 V1.0'
+    x = self._get_xml(3012)
+    return x.find('./String').text
+  
   def get_config(self):
     x = self._get_xml(3014)
     config = { k.text: v.text for k, v in \

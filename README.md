@@ -28,3 +28,6 @@ behavior was reverse engineered from the iOS and Android versions of CamKing.
 
 There should be other functions that I have not exposed yet. Most of the methods
 do not return useful values, or do any error checking at all.
+
+A much nicer project that works with a very similar camera is over at Steven
+Hiscock's [yidashcam](https://github.com/kwirk/yidashcam).
