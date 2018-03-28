@@ -1,9 +1,25 @@
 #!/usr/bin/env python
-
 import os
 import subprocess
 import sys
 import time
+
+
+try:
+  ok_models = [
+    'Raspberry Pi 3 Model B Rev 1.2\0',
+  ]
+  with open('/sys/firmware/devicetree/base/model') as f:
+    assert f.read() in ok_models
+except:
+    raise RuntimeError(
+      '''
+      This module is ONLY for the Raspberry Pi 3 Model B! You can comment out
+      this error if you think it will work on your device; if it does, please
+      send me a note, but if it doesn't, I can't help, sorry.
+      '''
+    )
+
 
 abyss = open(os.devnull, 'w')
 
