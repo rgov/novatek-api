@@ -21,7 +21,7 @@ def led_off():
   led_control(flag='0')
 
 def get_network():
-  return subprocess.check_output(['iwgetid', '-r'])
+  return subprocess.check_output(['iwgetid', '-r']).rstrip()
 
 def blink(duration=1.0, after=0.0, repeat=1, between=1.0):
   for i in range(repeat):
