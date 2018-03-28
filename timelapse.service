@@ -1,0 +1,16 @@
+# Put this file in /lib/systemd/system/timelapse.service
+# sudo pip install -r requirements
+# sudo systemctl daemon-reload
+# sudo systemctl enable timelapse.service
+
+[Unit]
+Description=Time-lapse Camera
+After=multi-user.target
+ 
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /home/pi/novatek-api/timelapse.py
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
