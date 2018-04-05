@@ -48,6 +48,11 @@ N.set_mode(Novatek.MODE['Video'])  # needs to be in video mode to take photos??
 def capture():
   logging.info('Starting capture')
   try:
+    N.set_ev(Novatek.EV['+2.0'])
+    N.take_photo()
+    N.set_ev(Novatek.EV['0.0'])
+    N.take_photo()
+    N.set_ev(Novatek.EV['-2.0'])
     N.take_photo()
     return True
   except Exception as e:
